@@ -1,0 +1,450 @@
+<<<<<<< HEAD
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * L'ÉCHOPPE GAULOISE - MAIN
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * Orchestration principale de l'application
+ * 
+ * @author Rodulfo - Formateur & Développeur Web
+ * @version 1.0.0
+ */
+
+(function() {
+  'use strict';
+
+  /**
+   * Initialize application when DOM is ready
+   */
+  function init() {
+    console.log('🍺 L\'Échoppe Gauloise - Initializing...');
+
+    // Initialize all modules
+    NavigationModule.init();
+    CarouselModule.init();
+    CartModule.init();
+    NewsletterModule.init();
+
+    // Setup language selector
+    setupLanguageSelector();
+
+    // Setup lazy loading
+    setupLazyLoading();
+
+    // Setup accessibility enhancements
+    setupAccessibility();
+
+    // Performance monitoring
+    monitorPerformance();
+
+    console.log('✓ Application initialized successfully');
+  }
+
+  /**
+   * Setup language selector
+   */
+  function setupLanguageSelector() {
+    const languageSelector = document.getElementById('languageSelector');
+    if (!languageSelector) return;
+
+    // Load saved language preference
+    const savedLanguage = Utils.getCookie('preferred_language') || 'fr';
+    languageSelector.value = savedLanguage;
+
+    languageSelector.addEventListener('change', function() {
+      const selectedLanguage = this.value;
+      Utils.setCookie('preferred_language', selectedLanguage, 365);
+
+      // In production, this would reload the page or fetch translations
+      Utils.showNotification(
+        `Langue changée: ${this.options[this.selectedIndex].text}`,
+        'info'
+      );
+
+      // Track language change
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'language_change', {
+          'event_category': 'engagement',
+          'event_label': selectedLanguage
+        });
+      }
+    });
+  }
+
+  /**
+   * Setup lazy loading for images
+   */
+  function setupLazyLoading() {
+    // Use native lazy loading if supported
+    if ('loading' in HTMLImageElement.prototype) {
+      return;
+    }
+
+    // Fallback: Intersection Observer
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.removeAttribute('loading');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach(img => imageObserver.observe(img));
+    } else {
+      // Fallback: load all images immediately
+      images.forEach(img => {
+        img.src = img.dataset.src || img.src;
+      });
+    }
+  }
+
+  /**
+   * Setup accessibility enhancements
+   */
+  function setupAccessibility() {
+    // Trap focus in modals
+    const modals = document.querySelectorAll('.modal-overlay');
+    modals.forEach(modal => {
+      modal.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          modal.classList.remove('modal-overlay--active');
+        }
+      });
+    });
+
+    // Add skip links navigation
+    const skipLink = document.querySelector('a[href="#main-content"]');
+    if (skipLink) {
+      skipLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('main-content');
+        if (target) {
+          target.setAttribute('tabindex', '-1');
+          target.focus();
+          Utils.scrollToElement(target);
+        }
+      });
+    }
+
+    // Announce dynamic content changes to screen readers
+    const ariaLive = document.createElement('div');
+    ariaLive.setAttribute('aria-live', 'polite');
+    ariaLive.setAttribute('aria-atomic', 'true');
+    ariaLive.className = 'sr-only';
+    ariaLive.id = 'aria-announcements';
+    document.body.appendChild(ariaLive);
+  }
+
+  /**
+   * Monitor performance
+   */
+  function monitorPerformance() {
+    if (!window.performance || !window.performance.timing) return;
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const timing = window.performance.timing;
+        const loadTime = timing.loadEventEnd - timing.navigationStart;
+        const domReady = timing.domContentLoadedEventEnd - timing.navigationStart;
+
+        console.log(`⚡ Performance Metrics:
+          - DOM Ready: ${domReady}ms
+          - Page Load: ${loadTime}ms
+        `);
+
+        // Send to analytics if available
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'timing_complete', {
+            'name': 'load',
+            'value': loadTime,
+            'event_category': 'Performance'
+          });
+        }
+
+        // Log warning if page is slow
+        if (loadTime > 3000) {
+          console.warn('⚠️ Page load time exceeds 3s target');
+        }
+      }, 0);
+    });
+  }
+
+  /**
+   * Error handling
+   */
+  window.addEventListener('error', (e) => {
+    console.error('Global error:', e.error);
+    
+    // In production, send to error tracking service
+    // Example: Sentry.captureException(e.error);
+  });
+
+  /**
+   * Handle offline/online status
+   */
+  window.addEventListener('online', () => {
+    Utils.showNotification('Connexion rétablie', 'success');
+  });
+
+  window.addEventListener('offline', () => {
+    Utils.showNotification('Vous êtes hors ligne', 'warning', 5000);
+  });
+
+  /**
+   * Initialize when DOM is ready
+   */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Console easter egg
+  console.log(`
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║                                                               ║
+    ║              🍺 L'ÉCHOPPE GAULOISE 🍷                         ║
+    ║                                                               ║
+    ║           L'Excellence Française dans Votre Verre            ║
+    ║                                                               ║
+    ║  Développé avec ❤️ par Rodulfo                               ║
+    ║  Formateur Professionnel d'Adultes & Développeur Web         ║
+    ║                                                               ║
+    ║  👋 Vous êtes développeur ? On recrute !                     ║
+    ║  📧 contact@echoppe-gauloise.fr                              ║
+    ║                                                               ║
+    ╚═══════════════════════════════════════════════════════════════╝
+  `);
+
+=======
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * L'ÉCHOPPE GAULOISE - MAIN
+ * ═══════════════════════════════════════════════════════════════════════════
+ * 
+ * Orchestration principale de l'application
+ * 
+ * @author Rodulfo - Formateur & Développeur Web
+ * @version 1.0.0
+ */
+
+(function() {
+  'use strict';
+
+  /**
+   * Initialize application when DOM is ready
+   */
+  function init() {
+    console.log('🍺 L\'Échoppe Gauloise - Initializing...');
+
+    // Initialize all modules
+    NavigationModule.init();
+    CarouselModule.init();
+    CartModule.init();
+    NewsletterModule.init();
+
+    // Setup language selector
+    setupLanguageSelector();
+
+    // Setup lazy loading
+    setupLazyLoading();
+
+    // Setup accessibility enhancements
+    setupAccessibility();
+
+    // Performance monitoring
+    monitorPerformance();
+
+    console.log('✓ Application initialized successfully');
+  }
+
+  /**
+   * Setup language selector
+   */
+  function setupLanguageSelector() {
+    const languageSelector = document.getElementById('languageSelector');
+    if (!languageSelector) return;
+
+    // Load saved language preference
+    const savedLanguage = Utils.getCookie('preferred_language') || 'fr';
+    languageSelector.value = savedLanguage;
+
+    languageSelector.addEventListener('change', function() {
+      const selectedLanguage = this.value;
+      Utils.setCookie('preferred_language', selectedLanguage, 365);
+
+      // In production, this would reload the page or fetch translations
+      Utils.showNotification(
+        `Langue changée: ${this.options[this.selectedIndex].text}`,
+        'info'
+      );
+
+      // Track language change
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'language_change', {
+          'event_category': 'engagement',
+          'event_label': selectedLanguage
+        });
+      }
+    });
+  }
+
+  /**
+   * Setup lazy loading for images
+   */
+  function setupLazyLoading() {
+    // Use native lazy loading if supported
+    if ('loading' in HTMLImageElement.prototype) {
+      return;
+    }
+
+    // Fallback: Intersection Observer
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.removeAttribute('loading');
+            observer.unobserve(img);
+          }
+        });
+      });
+
+      images.forEach(img => imageObserver.observe(img));
+    } else {
+      // Fallback: load all images immediately
+      images.forEach(img => {
+        img.src = img.dataset.src || img.src;
+      });
+    }
+  }
+
+  /**
+   * Setup accessibility enhancements
+   */
+  function setupAccessibility() {
+    // Trap focus in modals
+    const modals = document.querySelectorAll('.modal-overlay');
+    modals.forEach(modal => {
+      modal.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          modal.classList.remove('modal-overlay--active');
+        }
+      });
+    });
+
+    // Add skip links navigation
+    const skipLink = document.querySelector('a[href="#main-content"]');
+    if (skipLink) {
+      skipLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('main-content');
+        if (target) {
+          target.setAttribute('tabindex', '-1');
+          target.focus();
+          Utils.scrollToElement(target);
+        }
+      });
+    }
+
+    // Announce dynamic content changes to screen readers
+    const ariaLive = document.createElement('div');
+    ariaLive.setAttribute('aria-live', 'polite');
+    ariaLive.setAttribute('aria-atomic', 'true');
+    ariaLive.className = 'sr-only';
+    ariaLive.id = 'aria-announcements';
+    document.body.appendChild(ariaLive);
+  }
+
+  /**
+   * Monitor performance
+   */
+  function monitorPerformance() {
+    if (!window.performance || !window.performance.timing) return;
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const timing = window.performance.timing;
+        const loadTime = timing.loadEventEnd - timing.navigationStart;
+        const domReady = timing.domContentLoadedEventEnd - timing.navigationStart;
+
+        console.log(`⚡ Performance Metrics:
+          - DOM Ready: ${domReady}ms
+          - Page Load: ${loadTime}ms
+        `);
+
+        // Send to analytics if available
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'timing_complete', {
+            'name': 'load',
+            'value': loadTime,
+            'event_category': 'Performance'
+          });
+        }
+
+        // Log warning if page is slow
+        if (loadTime > 3000) {
+          console.warn('⚠️ Page load time exceeds 3s target');
+        }
+      }, 0);
+    });
+  }
+
+  /**
+   * Error handling
+   */
+  window.addEventListener('error', (e) => {
+    console.error('Global error:', e.error);
+    
+    // In production, send to error tracking service
+    // Example: Sentry.captureException(e.error);
+  });
+
+  /**
+   * Handle offline/online status
+   */
+  window.addEventListener('online', () => {
+    Utils.showNotification('Connexion rétablie', 'success');
+  });
+
+  window.addEventListener('offline', () => {
+    Utils.showNotification('Vous êtes hors ligne', 'warning', 5000);
+  });
+
+  /**
+   * Initialize when DOM is ready
+   */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Console easter egg
+  console.log(`
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║                                                               ║
+    ║              🍺 L'ÉCHOPPE GAULOISE 🍷                         ║
+    ║                                                               ║
+    ║           L'Excellence Française dans Votre Verre            ║
+    ║                                                               ║
+    ║  Développé avec ❤️ par Rodulfo                               ║
+    ║  Formateur Professionnel d'Adultes & Développeur Web         ║
+    ║                                                               ║
+    ║  👋 Vous êtes développeur ? On recrute !                     ║
+    ║  📧 contact@echoppe-gauloise.fr                              ║
+    ║                                                               ║
+    ╚═══════════════════════════════════════════════════════════════╝
+  `);
+
+>>>>>>> ae5d997df0a4717c008df91b10f27472e786db6f
+})();
