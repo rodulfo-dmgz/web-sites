@@ -15,9 +15,6 @@ Chaque site ici présent est conçu autour d'un scénario spécifique :
     * **Usage :** Simulation de création d'entreprise, gestion des stocks, facturation et prise de commande.
     * **Compétences visées :** Administration des ventes, suivi comptable, gestion de base de données clients.
 
-2.  **[Nom du Projet 2]** (En cours) :
-    * **Usage :** [Ex: Simulateur de SAV / Tableau de bord marketing].
-
 ---
 
 ### 🛠️ Architecture Technique
