@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Boutique Mon Pote au Miel - Achetez nos miels purs et savons artisanaux. Livraison internationale.">
+  <title>Boutique — Mon Pote au Miel</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/icon.svg">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+        <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+      </a>
+      <nav class="nav-main">
+        <div class="nav-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html" class="active">Boutique</a>
+          <a href="logistique.html">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <div class="currency-selector">
+          <button class="currency-btn">
+            <span class="currency-label">🇫🇷 EUR</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="currency-dropdown">
+            <div class="currency-option active" data-currency="EUR">🇫🇷 Euro <span class="currency-code">EUR</span></div>
+            <div class="currency-option" data-currency="USD">🇺🇸 Dollar US <span class="currency-code">USD</span></div>
+            <div class="currency-option" data-currency="JPY">🇯🇵 Yen <span class="currency-code">JPY</span></div>
+            <div class="currency-option" data-currency="MAD">🇲🇦 Dirham <span class="currency-code">MAD</span></div>
+            <div class="currency-option" data-currency="ARS">🇦🇷 Peso AR <span class="currency-code">ARS</span></div>
+          </div>
+        </div>
+        <button class="cart-btn" aria-label="Panier">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count" style="display:none;">0</span>
+        </button>
+        <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Accueil</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="logistique.html">Livraison</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar-header">
+      <h4>Votre Panier</h4>
+      <button class="cart-close-btn" aria-label="Fermer"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-items"><div class="cart-empty"><i data-lucide="shopping-bag"></i><p>Votre panier est vide</p></div></div>
+    <div class="cart-sidebar-footer" style="display:none;">
+      <div class="cart-total"><span>Total</span><span class="cart-total-amount">0,00€</span></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;">Commander <i data-lucide="arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="overline">Nos Produits</div>
+    <h1>La Boutique</h1>
+    <p>Miels purs, savons artisanaux et coffrets cadeaux — le meilleur de la ruche</p>
+  </section>
+
+  <!-- Shop -->
+  <section class="section">
+    <div class="container">
+      <!-- Filters & Currency Bar -->
+      <div class="shop-header-bar reveal">
+        <div class="shop-filters">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="miel">Miels</button>
+          <button class="filter-btn" data-filter="savon">Savons</button>
+          <button class="filter-btn" data-filter="coffret">Coffrets</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="shop-grid">
+        <!-- Miel de Lavande -->
+        <div class="product-card reveal" data-category="miel">
+          <div class="product-card-img">
+            <img src="../assets/images/miellavande.png" alt="Miel de Lavande" onerror="this.parentElement.style.background='linear-gradient(135deg, #f6edd5, #e4c881)'">
+            <span class="product-badge">Populaire</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Miel</div>
+            <h4 class="product-card-title">Miel de Lavande</h4>
+            <p class="product-card-desc">Arômes floraux délicats, texture onctueuse. Récolté en Provence.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="12.90">12,90€</span>
+              <span class="product-weight">250g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'miel-lavande',name:'Miel de Lavande',price:12.90})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="miel-lavande">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miel d'Acacia -->
+        <div class="product-card reveal" data-category="miel">
+          <div class="product-card-img">
+            <img src="../assets/images/mielacacia.png" alt="Miel d'Acacia" onerror="this.parentElement.style.background='linear-gradient(135deg, #fbf6ea, #dbb657)'">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Miel</div>
+            <h4 class="product-card-title">Miel d'Acacia</h4>
+            <p class="product-card-desc">Miel clair et liquide, au goût fin et élégant. Reste longtemps liquide.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="14.50">14,50€</span>
+              <span class="product-weight">250g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+             <button class="btn btn-primary btn-sm" onclick="Cart.add({id: 'miel-acacia', name: `Miel d'Acacia`, price: 14.50})"> <i data-lucide="shopping-bag"></i> Ajouter </button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="miel-acacia">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miel de Forêt -->
+        <div class="product-card reveal" data-category="miel">
+          <div class="product-card-img">
+            <img src="../assets/images/mielforet.png" alt="Miel de Forêt" onerror="this.parentElement.style.background='linear-gradient(135deg, #eec8aa, #7f461a)'">
+            <span class="product-badge">Nouveau</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Miel</div>
+            <h4 class="product-card-title">Miel de Forêt</h4>
+            <p class="product-card-desc">Saveurs boisées et corsées, riche en minéraux. Miellat de chênes et sapins.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="15.90">15,90€</span>
+              <span class="product-weight">250g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'miel-foret',name:'Miel de Forêt',price:15.90})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="miel-foret">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miel de Thym -->
+        <div class="product-card reveal" data-category="miel">
+          <div class="product-card-img">
+            <img src="../assets/images/mielthym.png" alt="Miel de Thym" onerror="this.parentElement.style.background='linear-gradient(135deg, #f6e3d5, #a95d23)'">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Miel</div>
+            <h4 class="product-card-title">Miel de Thym</h4>
+            <p class="product-card-desc">Goût intense, propriétés antiseptiques reconnues. Garrigue languedocienne.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="16.90">16,90€</span>
+              <span class="product-weight">250g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'miel-thym',name:'Miel de Thym',price:16.90})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="miel-thym">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savon Miel & Lavande -->
+        <div class="product-card reveal" data-category="savon">
+          <div class="product-card-img">
+            <img src="../assets/images/savonmiellavande.png" alt="Savon Miel & Lavande" onerror="this.parentElement.style.background='linear-gradient(135deg, #e2ebe0, #a7c4a1)'">
+            <span class="product-badge">Best-seller</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Savon</div>
+            <h4 class="product-card-title">Savon Miel & Lavande</h4>
+            <p class="product-card-desc">Savon surgras saponifié à froid, hydratant et apaisant pour peaux sensibles.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="8.50">8,50€</span>
+              <span class="product-weight">100g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'savon-lavande',name:'Savon Miel & Lavande',price:8.50})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="savon-lavande">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savon Miel & Propolis -->
+        <div class="product-card reveal" data-category="savon">
+          <div class="product-card-img">
+            <img src="../assets/images/savonmielpropolis.png" alt="Savon Miel & Propolis" onerror="this.parentElement.style.background='linear-gradient(135deg, #f6edd5, #a88324)'">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Savon</div>
+            <h4 class="product-card-title">Savon Miel & Propolis</h4>
+            <p class="product-card-desc">Purifiant, enrichi en propolis. Idéal pour peaux mixtes à grasses.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="9.50">9,50€</span>
+              <span class="product-weight">100g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'savon-propolis',name:'Savon Miel & Propolis',price:9.50})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="savon-propolis">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savon au Miel Pur -->
+        <div class="product-card reveal" data-category="savon">
+          <div class="product-card-img">
+            <img src="../assets/images/savonmiel.png" alt="Savon au Miel Pur" onerror="this.parentElement.style.background='linear-gradient(135deg, #eddaab, #d2a32d)'">
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Savon</div>
+            <h4 class="product-card-title">Savon au Miel Pur</h4>
+            <p class="product-card-desc">Ultra-doux, convient à toute la famille. Hydratation intense au miel pur.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="7.90">7,90€</span>
+              <span class="product-weight">100g</span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'savon-miel-doux',name:'Savon au Miel Pur',price:7.90})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="savon-miel-doux">Détails</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coffret Découverte -->
+        <div class="product-card reveal" data-category="coffret">
+          <div class="product-card-img">
+            <img src="../assets/images/PACK.png" alt="Coffret Découverte" onerror="this.parentElement.style.background='linear-gradient(135deg, #f6edd5, #d2a32d)'">
+            <span class="product-badge">Idée cadeau</span>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">Coffret</div>
+            <h4 class="product-card-title">Coffret Découverte</h4>
+            <p class="product-card-desc">2 miels + 1 savon dans un coffret élégant prêt à offrir.</p>
+            <div class="product-card-footer">
+              <span class="product-price" data-price-eur="39.90">39,90€</span>
+              <span class="product-weight"></span>
+            </div>
+            <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+              <button class="btn btn-primary btn-sm" onclick="Cart.add({id:'coffret-decouverte',name:'Coffret Découverte',price:39.90})"><i data-lucide="shopping-bag"></i> Ajouter</button>
+              <button class="btn btn-secondary btn-sm" data-product-detail="coffret-decouverte">Détails</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Modal -->
+  <div class="product-modal-overlay">
+    <div class="product-modal">
+      <button class="modal-close"><i data-lucide="x"></i></button>
+      <div class="modal-img" style="background:linear-gradient(135deg, var(--primary-200), var(--primary-200));"></div>
+      <div class="modal-body">
+        <div class="modal-meta"><span class="modal-tag">Miel</span></div>
+        <h3>Nom du produit</h3>
+        <p class="modal-description">Description du produit.</p>
+        <div class="modal-ingredients"><h5>Ingrédients</h5><p>Ingrédients du produit.</p></div>
+        <div class="modal-footer">
+          <span class="modal-price">12,90€</span>
+          <button class="btn btn-primary modal-add-btn"><i data-lucide="shopping-bag"></i> Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+          <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+        </a>
+        <p>Des produits artisanaux et naturels de haute qualité, fabriqués localement avec passion.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Navigation</h6>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="logistique.html">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Produits</h6>
+        <div class="footer-links">
+          <a href="boutique.html">Miels</a>
+          <a href="boutique.html">Savons</a>
+          <a href="boutique.html">Coffrets</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h6 class="footer-heading">Contact</h6>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item"><i data-lucide="map-pin"></i><span>12 chemin des Lavandes</span></div>
+          <div class="footer-contact-item"><i data-lucide="clock"></i><span>Mai à Octobre<br>Lun-Sam : 9h-12h30 / 13h30-17h</span></div>
+          <div class="footer-contact-item"><i data-lucide="mail"></i><span>contact@monpoteaumiel.fr</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mon Pote au Miel — EURL au capital de 10 000€</p>
+      <div class="footer-bottom-links">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <a href="mentions-legales.html">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/utils/currency.js"></script>
+  <script src="../js/utils/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

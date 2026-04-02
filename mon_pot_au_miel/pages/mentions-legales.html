@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mentions légales et CGV de Mon Pote au Miel - EURL au capital de 10 000€.">
+  <title>Mentions Légales — Mon Pote au Miel</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/icon.svg">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .legal-content { max-width: 800px; margin: 0 auto; }
+    .legal-section { margin-bottom: 3rem; }
+    .legal-section h3 { margin-bottom: 1rem; color: var(--primary-700); }
+    .legal-section h4 { margin-bottom: 0.5rem; margin-top: 1.5rem; }
+    .legal-section p { color: var(--text-600); margin-bottom: 0.75rem; line-height: 1.8; font-size: 0.95rem; }
+    .legal-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .legal-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--background-200); font-size: 0.9rem; }
+    .legal-table td:first-child { font-weight: 600; color: var(--text-800); width: 40%; font-family: 'Jost', sans-serif; }
+    .legal-table td:last-child { color: var(--text-600); }
+    .legal-highlight { background: var(--primary-50); border-left: 4px solid var(--primary-500); padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
+    .legal-highlight p { margin-bottom: 0; color: var(--text-700); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+        <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+      </a>
+      <nav class="nav-main">
+        <div class="nav-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="logistique.html">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" aria-label="Panier">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count" style="display:none;">0</span>
+        </button>
+        <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Accueil</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="logistique.html">Livraison</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar-header">
+      <h4>Votre Panier</h4>
+      <button class="cart-close-btn" aria-label="Fermer"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-items"><div class="cart-empty"><i data-lucide="shopping-bag"></i><p>Votre panier est vide</p></div></div>
+    <div class="cart-sidebar-footer" style="display:none;">
+      <div class="cart-total"><span>Total</span><span class="cart-total-amount">0,00€</span></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;">Commander <i data-lucide="arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="overline">Transparence</div>
+    <h1>Mentions Légales</h1>
+    <p>Informations administratives et conditions générales de vente</p>
+  </section>
+
+  <!-- Legal Content -->
+  <section class="section">
+    <div class="legal-content">
+
+      <!-- Identité -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="building" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Identité de l'entreprise</h3>
+        <table class="legal-table">
+          <tr><td>Raison sociale</td><td>Mon Pote au Miel</td></tr>
+          <tr><td>Forme juridique</td><td>EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</td></tr>
+          <tr><td>Capital social</td><td>10 000 €</td></tr>
+          <tr><td>Siège social</td><td>12 chemin des Lavandes</td></tr>
+          <tr><td>Date de création</td><td>1er Avril 2022</td></tr>
+          <tr><td>SIRET</td><td>262 305 323 61869 / 232 305 322 72640</td></tr>
+          <tr><td>SIREN</td><td>262 305 322</td></tr>
+          <tr><td>Code APE</td><td>0149Z / 2041Z</td></tr>
+          <tr><td>KBIS</td><td>2022B12345</td></tr>
+          <tr><td>Secteur</td><td>Tertiaire</td></tr>
+          <tr><td>Nombre de salariés</td><td>47</td></tr>
+        </table>
+      </div>
+
+      <!-- Hébergement -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="server" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Hébergement du site</h3>
+        <table class="legal-table">
+          <tr><td>Hébergeur</td><td>GitHub Pages (GitHub, Inc.)</td></tr>
+          <tr><td>Adresse</td><td>88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</td></tr>
+          <tr><td>Site web</td><td>https://pages.github.com</td></tr>
+        </table>
+      </div>
+
+      <!-- Propriété intellectuelle -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="copyright" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Propriété intellectuelle</h3>
+        <p>L'ensemble des contenus de ce site (textes, images, logos, graphismes, icônes, vidéos, sons) est la propriété exclusive de Mon Pote au Miel, sauf mention contraire. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de Mon Pote au Miel.</p>
+      </div>
+
+      <!-- Données personnelles -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="lock" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Protection des données personnelles</h3>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+        <p>Les données collectées via le formulaire de contact sont uniquement utilisées pour répondre à vos demandes. Elles ne sont en aucun cas cédées à des tiers.</p>
+        <p>Pour exercer vos droits, contactez-nous à : <strong>contact@monpoteaumiel.fr</strong></p>
+      </div>
+
+      <!-- CGV -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="file-text" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Conditions Générales de Vente</h3>
+
+        <h4>Article 1 – Objet</h4>
+        <p>Les présentes CGV régissent la vente en ligne de miel et de savons artisanaux par Mon Pote au Miel. Toute commande implique l'acceptation sans réserve de ces conditions.</p>
+
+        <h4>Article 2 – Prix</h4>
+        <p>Les prix sont indiqués en euros TTC. Mon Pote au Miel se réserve le droit de modifier ses prix à tout moment. Les produits sont facturés sur la base du tarif en vigueur au moment de la validation de la commande. Les prix affichés dans d'autres devises sont donnés à titre indicatif et peuvent varier selon le taux de change au moment du paiement.</p>
+
+        <h4>Article 3 – Commande</h4>
+        <p>La commande est validée après confirmation du paiement. Un email de confirmation est envoyé au client. Mon Pote au Miel se réserve le droit d'annuler toute commande pour motif légitime.</p>
+
+        <h4>Article 4 – Livraison</h4>
+        <p>Les délais de livraison sont donnés à titre indicatif. En cas de retard, le client sera informé par email. Les frais de livraison sont précisés dans la page Logistique & International.</p>
+
+        <h4>Article 5 – Droit de rétractation</h4>
+        <p>Conformément à l'article L221-18 du Code de la consommation, le client dispose d'un délai de 14 jours à compter de la réception pour exercer son droit de rétractation, sans avoir à justifier de motifs. Les produits alimentaires ouverts ne peuvent être retournés pour des raisons d'hygiène.</p>
+
+        <h4>Article 6 – Exportation</h4>
+        <p>Pour les commandes à destination de pays hors Union Européenne, des droits de douane et taxes peuvent être appliqués par les autorités du pays de destination. Ces frais sont à la charge du client. Mon Pote au Miel fournit tous les documents sanitaires nécessaires à l'import de produits alimentaires.</p>
+
+        <div class="legal-highlight">
+          <p><strong>Médiation :</strong> En cas de litige, le client peut recourir gratuitement au médiateur de la consommation. Droit applicable : droit français. Tribunal compétent : Tribunal de Commerce de Montpellier.</p>
+        </div>
+      </div>
+
+      <!-- Cookies -->
+      <div class="legal-section reveal">
+        <h3><i data-lucide="cookie" style="width:24px;height:24px;display:inline;vertical-align:-5px;margin-right:8px;color:var(--primary-500);"></i> Cookies</h3>
+        <p>Ce site utilise des cookies techniques nécessaires au bon fonctionnement du panier d'achat et à la mémorisation de votre devise préférée. Aucun cookie de tracking ou publicitaire n'est utilisé.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+          <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+        </a>
+        <p>Des produits artisanaux et naturels de haute qualité, fabriqués localement avec passion.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Navigation</h6>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="logistique.html">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Produits</h6>
+        <div class="footer-links">
+          <a href="boutique.html">Miels</a>
+          <a href="boutique.html">Savons</a>
+          <a href="boutique.html">Coffrets</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h6 class="footer-heading">Contact</h6>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item"><i data-lucide="map-pin"></i><span>12 chemin des Lavandes</span></div>
+          <div class="footer-contact-item"><i data-lucide="clock"></i><span>Mai à Octobre<br>Lun-Sam : 9h-12h30 / 13h30-17h</span></div>
+          <div class="footer-contact-item"><i data-lucide="mail"></i><span>contact@monpoteaumiel.fr</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mon Pote au Miel — EURL au capital de 10 000€</p>
+      <div class="footer-bottom-links">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <a href="mentions-legales.html">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/utils/currency.js"></script>
+  <script src="../js/utils/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

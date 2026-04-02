@@ -1,0 +1,170 @@
+/* ========================================
+   CONTACT PAGE - Mon Pote au Miel
+   ======================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-form {
+  background: var(--background-50);
+  border: 1px solid var(--background-200);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-800);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 2px solid var(--background-200);
+  border-radius: 12px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.9rem;
+  color: var(--text-900);
+  background: var(--background-50);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-500);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Info Cards */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-card {
+  background: var(--background-50);
+  border: 1px solid var(--background-200);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+.contact-info-card:hover {
+  border-color: var(--primary-300);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-600);
+}
+
+.contact-info-text h5 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.contact-info-text p {
+  font-size: 0.9rem;
+  color: var(--text-500);
+}
+
+/* Hours */
+.hours-grid {
+  background: var(--primary-50);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.hours-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.hours-title svg {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-500);
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--primary-200);
+  font-size: 0.9rem;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-season {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--accent-500);
+  margin-bottom: 0.5rem;
+}
+
+/* Map */
+.map-container {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 350px;
+  margin-top: 2rem;
+  border: 1px solid var(--background-200);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

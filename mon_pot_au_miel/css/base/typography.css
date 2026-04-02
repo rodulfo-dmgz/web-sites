@@ -1,0 +1,59 @@
+/* ========================================
+   TYPOGRAPHY - Mon Pote au Miel
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap');
+
+html {
+  font-size: 100%; /* 16px */
+}
+
+body {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-weight: 400;
+  color: var(--text-900);
+  background-color: var(--background-50);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-950);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.21rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3.158rem); }
+h3 { font-size: clamp(1.4rem, 3vw, 2.369rem); }
+h4 { font-size: clamp(1.2rem, 2.5vw, 1.777rem); }
+h5 { font-size: clamp(1.1rem, 2vw, 1.333rem); }
+
+p {
+  line-height: 1.8;
+  max-width: 70ch;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+.text-accent {
+  color: var(--primary-500);
+}
+
+.text-secondary {
+  color: var(--secondary-500);
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--primary-500);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--text-700);
+}
+
+::selection {
+  background-color: var(--primary-300);
+  color: var(--text-950);
+}

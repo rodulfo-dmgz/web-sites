@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Livraison internationale Mon Pote au Miel - Délais, douanes et emballage éco-responsable.">
+  <title>Livraison & International — Mon Pote au Miel</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/icon.svg">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+        <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+      </a>
+      <nav class="nav-main">
+        <div class="nav-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="logistique.html" class="active">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" aria-label="Panier">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count" style="display:none;">0</span>
+        </button>
+        <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Accueil</a>
+    <a href="histoire.html">Notre Histoire</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="logistique.html">Livraison</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar-overlay"></div>
+  <aside class="cart-sidebar">
+    <div class="cart-sidebar-header">
+      <h4>Votre Panier</h4>
+      <button class="cart-close-btn" aria-label="Fermer"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-items"><div class="cart-empty"><i data-lucide="shopping-bag"></i><p>Votre panier est vide</p></div></div>
+    <div class="cart-sidebar-footer" style="display:none;">
+      <div class="cart-total"><span>Total</span><span class="cart-total-amount">0,00€</span></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;">Commander <i data-lucide="arrow-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="overline">Réassurance</div>
+    <h1>Livraison & International</h1>
+    <p>Du chemin des Lavandes jusqu'à votre porte, partout dans le monde</p>
+  </section>
+
+  <!-- Logistics Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="logistics-grid reveal">
+        <div class="logistics-card">
+          <div class="logistics-icon"><i data-lucide="truck"></i></div>
+          <h4>Livraison soignée</h4>
+          <p>Chaque colis est préparé avec soin, emballé dans des matériaux protecteurs et recyclables pour arriver en parfait état.</p>
+        </div>
+        <div class="logistics-card">
+          <div class="logistics-icon"><i data-lucide="globe"></i></div>
+          <h4>Expédition mondiale</h4>
+          <p>Nous livrons en France, aux USA, au Japon, au Maroc et en Argentine. D'autres destinations sur demande.</p>
+        </div>
+        <div class="logistics-card">
+          <div class="logistics-icon"><i data-lucide="shield-check"></i></div>
+          <h4>Garantie qualité</h4>
+          <p>Si votre commande arrive endommagée, nous la renvoyons gratuitement. Satisfait ou remboursé sous 14 jours.</p>
+        </div>
+      </div>
+
+      <!-- Delivery Table -->
+      <div class="section-header reveal" style="margin-top:3rem;">
+        <div class="overline">Délais & Tarifs</div>
+        <h2>Zones de livraison</h2>
+      </div>
+
+      <div class="delivery-table-wrapper reveal">
+        <table class="delivery-table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Délai estimé</th>
+              <th>Frais de port</th>
+              <th>Seuil franco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇫🇷 France métropolitaine</td>
+              <td>2-4 jours ouvrés</td>
+              <td>4,90€</td>
+              <td>Gratuit dès 50€</td>
+            </tr>
+            <tr>
+              <td>🇪🇺 Union Européenne</td>
+              <td>5-8 jours ouvrés</td>
+              <td>9,90€</td>
+              <td>Gratuit dès 80€</td>
+            </tr>
+            <tr>
+              <td>🇺🇸 États-Unis</td>
+              <td>7-12 jours ouvrés</td>
+              <td>14,90€</td>
+              <td>Gratuit dès 100€</td>
+            </tr>
+            <tr>
+              <td>🇯🇵 Japon</td>
+              <td>10-15 jours ouvrés</td>
+              <td>18,90€</td>
+              <td>Gratuit dès 120€</td>
+            </tr>
+            <tr>
+              <td>🇲🇦 Maroc</td>
+              <td>7-12 jours ouvrés</td>
+              <td>12,90€</td>
+              <td>Gratuit dès 90€</td>
+            </tr>
+            <tr>
+              <td>🇦🇷 Argentine</td>
+              <td>12-20 jours ouvrés</td>
+              <td>19,90€</td>
+              <td>Gratuit dès 130€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Customs Note -->
+      <div class="feature-card reveal" style="max-width:800px;margin:2rem auto;background:var(--accent-50);border-color:var(--accent-200);">
+        <div class="feature-icon" style="background:var(--accent-100);">
+          <i data-lucide="file-text" style="color:var(--accent-600);"></i>
+        </div>
+        <h4>Note sur les douanes</h4>
+        <p>Pour les envois hors UE, des droits de douane et taxes locales peuvent s'appliquer à l'arrivée dans le pays de destination. Le miel étant un produit alimentaire, nous incluons tous les certificats sanitaires nécessaires. Nos produits sont conformes aux réglementations d'importation alimentaire des pays listés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eco Section -->
+  <section class="section eco-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="overline">Éco-responsable</div>
+        <h2>Emballage durable</h2>
+        <p>Protéger nos produits sans compromettre notre planète.</p>
+      </div>
+
+      <div class="eco-grid reveal">
+        <div class="eco-card">
+          <div class="eco-icon"><i data-lucide="recycle"></i></div>
+          <h4>100% Recyclable</h4>
+          <p>Cartons et papier kraft issus de forêts gérées durablement. Aucun plastique dans nos emballages.</p>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon"><i data-lucide="package"></i></div>
+          <h4>Protection naturelle</h4>
+          <p>Paille de bois et papier de soie pour caler vos produits. Fini le polystyrène et le film plastique.</p>
+        </div>
+        <div class="eco-card">
+          <div class="eco-icon"><i data-lucide="leaf"></i></div>
+          <h4>Encres végétales</h4>
+          <p>Nos étiquettes et packaging imprimés avec des encres végétales sur papier certifié FSC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="overline">Questions fréquentes</div>
+        <h2>FAQ Livraison</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            Comment suivre ma commande ?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Un email de confirmation avec un numéro de suivi vous est envoyé dès l'expédition de votre commande. Vous pouvez suivre votre colis en temps réel via le lien fourni dans cet email.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Le miel risque-t-il de s'abîmer pendant le transport ?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Le miel est un produit naturellement stable qui se conserve très longtemps. Nos pots sont hermétiques et emballés dans des protections anti-choc. Même en cas de voyage long, votre miel arrivera en parfait état.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Y a-t-il des restrictions douanières pour le miel ?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Nous gérons toutes les formalités douanières pour les pays que nous desservons (USA, Japon, Maroc, Argentine). Nos produits sont accompagnés des certificats sanitaires requis. Cependant, des taxes d'importation locales peuvent s'ajouter au prix final selon votre pays.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Puis-je retourner un produit ?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Vous disposez de 14 jours après réception pour retourner un produit non ouvert et dans son emballage d'origine. Les frais de retour sont à votre charge sauf en cas de produit défectueux ou d'erreur de notre part.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Livrez-vous dans d'autres pays ?
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Nous ajoutons régulièrement de nouvelles destinations. Si votre pays n'est pas listé, contactez-nous par email à contact@monpoteaumiel.fr et nous étudierons la faisabilité de l'expédition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon"><img src="../assets/logo/logo.svg" alt="Mon pote au miel"></i></div>
+          <div class="logo-text">Mon Pote au Miel<span>Miel d'exception</span></div>
+        </a>
+        <p>Des produits artisanaux et naturels de haute qualité, fabriqués localement avec passion.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Navigation</h6>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a>
+          <a href="histoire.html">Notre Histoire</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="logistique.html">Livraison</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h6 class="footer-heading">Produits</h6>
+        <div class="footer-links">
+          <a href="boutique.html">Miels</a>
+          <a href="boutique.html">Savons</a>
+          <a href="boutique.html">Coffrets</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h6 class="footer-heading">Contact</h6>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item"><i data-lucide="map-pin"></i><span>12 chemin des Lavandes</span></div>
+          <div class="footer-contact-item"><i data-lucide="clock"></i><span>Mai à Octobre<br>Lun-Sam : 9h-12h30 / 13h30-17h</span></div>
+          <div class="footer-contact-item"><i data-lucide="mail"></i><span>contact@monpoteaumiel.fr</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mon Pote au Miel — EURL au capital de 10 000€</p>
+      <div class="footer-bottom-links">
+        <a href="mentions-legales.html">Mentions Légales</a>
+        <a href="mentions-legales.html">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/utils/currency.js"></script>
+  <script src="../js/utils/cart.js"></script>
+  <script src="../js/app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

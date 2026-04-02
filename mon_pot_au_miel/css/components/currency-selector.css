@@ -1,0 +1,106 @@
+/* ========================================
+   CURRENCY SELECTOR - Mon Pote au Miel
+   ======================================== */
+
+.currency-selector {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.currency-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--background-200);
+  background: var(--background-50);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-800);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.currency-btn:hover {
+  border-color: var(--primary-200);
+}
+
+.currency-btn .flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.currency-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+
+.currency-btn.open svg {
+  transform: rotate(180deg);
+}
+
+.currency-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--background-50);
+  border: 1px solid var(--background-200);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.currency-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.currency-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.85rem;
+  color: var(--text-700);
+}
+
+.currency-option:hover {
+  background: var(--primary-100);
+}
+
+.currency-option.active {
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-weight: 600;
+}
+
+.currency-option .flag {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.currency-option .currency-code {
+  margin-left: auto;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--text-500);
+}
